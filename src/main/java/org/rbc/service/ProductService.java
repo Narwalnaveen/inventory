@@ -21,7 +21,7 @@ public class ProductService {
         product.setCompany(productRequest.getCompany());
         product.setInventoryCategory(productRequest.getInventoryCategory());
         product.setPurchasePrice(productRequest.getPurchasePrice());
-        product.setPurchasePrice(productRequest.getSalesPrice());
+        product.setSalesPrice(productRequest.getSalesPrice());
         product.setProductName(productRequest.getProductName());
         product.setProductDescription(productRequest.getProductDescription());
         productRepository.save(product);
