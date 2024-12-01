@@ -1,19 +1,29 @@
 package org.rbc.controller;
 
-import org.rbc.model.Inventory;
+import org.rbc.domain.InventoryFilterRequest;
+import org.rbc.domain.InventoryRequest;
+import org.rbc.domain.InventoryResponse;
 import org.rbc.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+import java.util.List;
+
+@RestController("/inventory")
 public class InventoryController {
 
     @Autowired
     private InventoryService inventoryService;
 
-    @GetMapping("/saveinventory")
-    public Inventory saveInventory() {
-        return inventoryService.save();
+    @PostMapping("/saveInventory")
+    public String saveInventory(@RequestBody InventoryRequest inventoryRequest) throws Exception {
+        return inventoryService.save(inventoryRequest);
+    }
+
+    @PostMapping("/inventories")
+    public List<InventoryResponse> getInventories(@RequestBody InventoryFilterRequest inventoryFilterRequest) {
+        return inventoryService.getInventories(inventoryFilterRequest);
     }
 }

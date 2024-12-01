@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,6 +21,10 @@ public class Inventory {
     private int quantity;
 
     private boolean isAvailable;
+
+    private Date createdDate;
+
+    private Date lastUpdateDate;
 
     @OneToOne(fetch =FetchType.LAZY)
     @JoinColumn(name = "product_id")

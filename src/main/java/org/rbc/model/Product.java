@@ -18,7 +18,9 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private Company company;
 
-    private double unitPrice;
+    private double purchasePrice;
+
+    private double salesPrice;
 
     private String productName;
 

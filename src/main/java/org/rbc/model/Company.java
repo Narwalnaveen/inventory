@@ -2,5 +2,8 @@ package org.rbc.model;
 
 public enum Company {
 
-    YONEX;
+    YONEX,
+    VICTOR,
+    LINING,
+    CHAOPAI;
 }
